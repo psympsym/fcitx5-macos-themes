@@ -33,13 +33,11 @@ DarkTheme=mac-dark
 UseDarkTheme=True
 ```
 
-## Install with your AI agent
+## AI agents
 
-Tell your agent:
+This repository is small and file-based. AI coding agents should follow [`AGENTS.md`](AGENTS.md) when editing or packaging the themes.
 
-> Install `https://github.com/psympsym/fcitx5-macos-themes` for Fcitx5 Classic UI. Follow `AGENTS.md`. Apply `mac-light` and `mac-dark`. Do not use sudo.
-
-This repo includes [`AGENTS.md`](AGENTS.md) for agent-safe installation.
+To install with an AI agent, paste the normal install commands above and ask it to apply the Fcitx5 Classic UI settings. Fonts are separate; see below.
 
 ## Font used in preview
 

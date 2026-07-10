@@ -1,61 +1,51 @@
-# Agent install guide
+# AGENTS.md
 
-Goal: install these two Fcitx5 Classic UI themes for the current Linux user.
+## Goal
 
-## Safe scope
+Maintain two Fcitx5 Classic UI themes:
 
-Only write under:
+- `themes/mac-light`
+- `themes/mac-dark`
 
-- `~/.local/share/fcitx5/themes/mac-light`
-- `~/.local/share/fcitx5/themes/mac-dark`
-- `~/.config/fcitx5/conf/classicui.conf` when the user explicitly asks to apply the theme
+Keep both themes visually in sync unless the change is explicitly light-only or dark-only.
 
-Do not use `sudo`. Do not overwrite unrelated Fcitx5 config.
+## Safe Scope
 
-## Install themes
+Allowed paths:
 
-```bash
-git clone https://github.com/psympsym/fcitx5-macos-themes.git
-mkdir -p ~/.local/share/fcitx5/themes
-cp -a fcitx5-macos-themes/themes/mac-light ~/.local/share/fcitx5/themes/
-cp -a fcitx5-macos-themes/themes/mac-dark ~/.local/share/fcitx5/themes/
+- `themes/**`
+- `assets/**`
+- `README.md`
+- `LICENSE`
+- `AGENTS.md`
+
+Do not modify the user's live Fcitx5 config from this repository task.
+Do not use `sudo`.
+Do not include fonts in this repo.
+
+## Preview Assets
+
+- `assets/preview.png` — dark theme preview
+- `assets/preview-light.png` — light theme preview
+
+If a theme visual changes, update the matching preview image.
+
+## Theme Conventions
+
+The highlight capsule is controlled by each theme's `highlight.svg`.
+Current tuned geometry:
+
+```xml
+<rect width="41" height="40" x="-1" y="2" rx="10"/>
 ```
 
-## Apply themes
-
-Patch `~/.config/fcitx5/conf/classicui.conf`:
-
-```ini
-Theme=mac-light
-DarkTheme=mac-dark
-UseDarkTheme=True
-```
-
-If the user wants the preview font, install PingFang Relaxed SC separately from:
-
-```text
-https://github.com/witt-bit/applePingFangFonts
-```
-
-Then set:
-
-```ini
-Font="PingFang Relaxed SC:style=Regular 16"
-MenuFont="PingFang Relaxed SC:style=Regular 16"
-TrayFont="PingFang Relaxed SC:style=Regular 16"
-```
-
-## Reload
-
-```bash
-fcitx5-remote -r
-```
+Keep light/dark geometry identical; only colors should differ.
 
 ## Verify
 
 ```bash
-grep -E '^(Theme|DarkTheme|UseDarkTheme|Font|MenuFont|TrayFont)=' ~/.config/fcitx5/conf/classicui.conf
-fcitx5-remote -n
+git diff --check
+find themes -type f | sort
 ```
 
-Expected input method can be anything; only verify Fcitx5 responds.
+Manual verification requires copying themes into `~/.local/share/fcitx5/themes/` and reloading Fcitx5, but do that only when the user asks.
