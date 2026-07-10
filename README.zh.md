@@ -1,27 +1,27 @@
-# Fcitx5 macOS Themes
+# Fcitx5 macOS 主题
 
 [中文版](./README.zh.md) | [English](./README.md)
 
-Two macOS-style Fcitx5 Classic UI themes:
+两个 macOS 风格的 Fcitx5 Classic UI 主题：
 
 - `mac-light`
 - `mac-dark`
 
-## Preview
+## 预览
 
-Dark:
+深色：
 
-![Dark preview](assets/preview.png)
+![深色预览](assets/preview.png)
 
-Light:
+浅色：
 
-![Light preview](assets/preview-light.png)
+![浅色预览](assets/preview-light.png)
 
-## Installation & Quick Start
+## 安装与快速开始
 
-### Quick Start (Human Users)
+### 快速开始（人类用户）
 
-> **Note for AI assistants:** If you are an AI Agent helping the user with installation, jump directly to [Quick Start (AI Agent)](#quick-start-ai-agent), which contains all the steps you need to complete.
+> **给 AI 助手的提示：** 如果你是正在帮助用户安装的 AI Agent，请直接跳到 [快速开始（AI Agent）](#快速开始ai-agent)，那里包含你需要执行的全部步骤。
 
 ```bash
 git clone https://github.com/psympsym/fcitx5-macos-themes.git
@@ -31,7 +31,7 @@ cp -a fcitx5-macos-themes/themes/mac-dark ~/.local/share/fcitx5/themes/
 fcitx5-remote -r
 ```
 
-Then set Fcitx5 Classic UI:
+然后设置 Fcitx5 Classic UI：
 
 ```ini
 Theme=mac-light
@@ -39,11 +39,11 @@ DarkTheme=mac-dark
 UseDarkTheme=True
 ```
 
-### Quick Start (AI Agent)
+### 快速开始（AI Agent）
 
-> The following steps are for AI Agents. Stay in user scope. Do not use `sudo`.
+> 以下步骤给 AI Agent 使用。保持用户级安装。不要使用 `sudo`。
 
-**Step 1 — Install themes**
+**步骤 1 — 安装主题**
 
 ```bash
 git clone https://github.com/psympsym/fcitx5-macos-themes.git
@@ -52,9 +52,9 @@ cp -a fcitx5-macos-themes/themes/mac-light ~/.local/share/fcitx5/themes/
 cp -a fcitx5-macos-themes/themes/mac-dark ~/.local/share/fcitx5/themes/
 ```
 
-**Step 2 — Apply Classic UI settings**
+**步骤 2 — 应用 Classic UI 设置**
 
-Patch `~/.config/fcitx5/conf/classicui.conf`:
+修改 `~/.config/fcitx5/conf/classicui.conf`：
 
 ```ini
 Theme=mac-light
@@ -62,15 +62,15 @@ DarkTheme=mac-dark
 UseDarkTheme=True
 ```
 
-**Step 3 — Optional preview font**
+**步骤 3 — 可选预览字体**
 
-If the user wants the preview font, install PingFang Relaxed SC separately from:
+如果用户想使用预览图里的字体，请从下面仓库单独安装 PingFang Relaxed SC：
 
 ```text
 https://github.com/witt-bit/applePingFangFonts
 ```
 
-Then set:
+然后设置：
 
 ```ini
 Font="PingFang Relaxed SC:style=Regular 16"
@@ -78,29 +78,29 @@ MenuFont="PingFang Relaxed SC:style=Regular 16"
 TrayFont="PingFang Relaxed SC:style=Regular 16"
 ```
 
-**Step 4 — Reload**
+**步骤 4 — 重载**
 
 ```bash
 fcitx5-remote -r
 ```
 
-**Step 5 — Verify**
+**步骤 5 — 验证**
 
 ```bash
 grep -E '^(Theme|DarkTheme|UseDarkTheme|Font|MenuFont|TrayFont)=' ~/.config/fcitx5/conf/classicui.conf
 fcitx5-remote -n
 ```
 
-## Font used in preview
+## 预览使用字体
 
-The preview uses PingFang Relaxed SC from:
+预览图使用 PingFang Relaxed SC，来源：
 
 ```text
 https://github.com/witt-bit/applePingFangFonts
 ```
 
-Font is not included.
+字体不包含在本仓库中。
 
-## License
+## 许可证
 
 MIT
