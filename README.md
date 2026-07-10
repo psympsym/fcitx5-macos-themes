@@ -5,7 +5,15 @@ Two macOS-style Fcitx5 Classic UI themes:
 - `mac-light`
 - `mac-dark`
 
-![Preview](assets/preview.png)
+## Preview
+
+Dark:
+
+![Dark preview](assets/preview.png)
+
+Light:
+
+![Light preview](assets/preview-light.png)
 
 ## Install
 
@@ -25,7 +33,23 @@ DarkTheme=mac-dark
 UseDarkTheme=True
 ```
 
+## Install with your AI agent
+
+Tell your agent:
+
+> Install `https://github.com/psympsym/fcitx5-macos-themes` for Fcitx5 Classic UI. Follow `AGENTS.md`. Apply `mac-light` and `mac-dark`. Do not use sudo.
+
+This repo includes [`AGENTS.md`](AGENTS.md) for agent-safe installation.
+
 ## Font used in preview
+
+The preview uses PingFang Relaxed SC from:
+
+```text
+https://github.com/witt-bit/applePingFangFonts
+```
+
+Font config:
 
 ```ini
 Font="PingFang Relaxed SC:style=Regular 16"
