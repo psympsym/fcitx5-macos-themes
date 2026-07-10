@@ -4,18 +4,18 @@
 
 Two macOS-style Fcitx5 Classic UI themes:
 
-- `mac-light`
 - `mac-dark`
+- `mac-light`
 
 ## Preview
-
-Dark:
-
-![Dark preview](assets/preview.png)
 
 Light:
 
 ![Light preview](assets/preview-light.png)
+
+Dark:
+
+![Dark preview](assets/preview.png)
 
 ## Installation & Quick Start
 

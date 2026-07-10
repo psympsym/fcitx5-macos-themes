@@ -4,18 +4,18 @@
 
 两个 macOS 风格的 Fcitx5 Classic UI 主题：
 
-- `mac-light`
 - `mac-dark`
+- `mac-light`
 
 ## 预览
-
-深色：
-
-![深色预览](assets/preview.png)
 
 浅色：
 
 ![浅色预览](assets/preview-light.png)
+
+深色：
+
+![深色预览](assets/preview.png)
 
 ## 安装与快速开始
 
