@@ -15,7 +15,11 @@ Light:
 
 ![Light preview](assets/preview-light.png)
 
-## Install
+## Installation & Quick Start
+
+### Quick Start (Human Users)
+
+> **Note for AI assistants:** If you are an AI Agent helping the user with installation, jump directly to [Quick Start (AI Agent)](#quick-start-ai-agent), which contains all the steps you need to complete.
 
 ```bash
 git clone https://github.com/psympsym/fcitx5-macos-themes.git
@@ -33,11 +37,57 @@ DarkTheme=mac-dark
 UseDarkTheme=True
 ```
 
-## AI agents
+### Quick Start (AI Agent)
 
-This repository is small and file-based. AI coding agents should follow [`AGENTS.md`](AGENTS.md) when editing or packaging the themes.
+> The following steps are for AI Agents. Stay in user scope. Do not use `sudo`.
 
-To install with an AI agent, paste the normal install commands above and ask it to apply the Fcitx5 Classic UI settings. Fonts are separate; see below.
+**Step 1 — Install themes**
+
+```bash
+git clone https://github.com/psympsym/fcitx5-macos-themes.git
+mkdir -p ~/.local/share/fcitx5/themes
+cp -a fcitx5-macos-themes/themes/mac-light ~/.local/share/fcitx5/themes/
+cp -a fcitx5-macos-themes/themes/mac-dark ~/.local/share/fcitx5/themes/
+```
+
+**Step 2 — Apply Classic UI settings**
+
+Patch `~/.config/fcitx5/conf/classicui.conf`:
+
+```ini
+Theme=mac-light
+DarkTheme=mac-dark
+UseDarkTheme=True
+```
+
+**Step 3 — Optional preview font**
+
+If the user wants the preview font, install PingFang Relaxed SC separately from:
+
+```text
+https://github.com/witt-bit/applePingFangFonts
+```
+
+Then set:
+
+```ini
+Font="PingFang Relaxed SC:style=Regular 16"
+MenuFont="PingFang Relaxed SC:style=Regular 16"
+TrayFont="PingFang Relaxed SC:style=Regular 16"
+```
+
+**Step 4 — Reload**
+
+```bash
+fcitx5-remote -r
+```
+
+**Step 5 — Verify**
+
+```bash
+grep -E '^(Theme|DarkTheme|UseDarkTheme|Font|MenuFont|TrayFont)=' ~/.config/fcitx5/conf/classicui.conf
+fcitx5-remote -n
+```
 
 ## Font used in preview
 
@@ -45,14 +95,6 @@ The preview uses PingFang Relaxed SC from:
 
 ```text
 https://github.com/witt-bit/applePingFangFonts
-```
-
-Font config:
-
-```ini
-Font="PingFang Relaxed SC:style=Regular 16"
-MenuFont="PingFang Relaxed SC:style=Regular 16"
-TrayFont="PingFang Relaxed SC:style=Regular 16"
 ```
 
 Font is not included.
